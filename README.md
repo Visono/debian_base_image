@@ -1,5 +1,5 @@
 # debian_base_image
-## Docker base image of debian 7 with tools installed. 
+## Docker base image of debian 7 with tools installed.
 
 Base image: [debian][1]:wheezy
 

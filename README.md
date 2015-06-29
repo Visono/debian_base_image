@@ -1,4 +1,6 @@
 # debian_base_image
+## Docker base image of debian 7 with tools installed. 
+
 Base image: [debian][1]:wheezy
 
 [![](https://badge.imagelayers.io/visono/debian:latest.svg)](https://imagelayers.io/?images=visono/debian:latest 'Get your own badge on imagelayers.io')

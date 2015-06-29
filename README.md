@@ -18,5 +18,7 @@ Additionally installed software:
 - at
 - whois
 - less
+- python-pip
+- uuid-runtim
 
   [1]: https://registry.hub.docker.com/_/debian/

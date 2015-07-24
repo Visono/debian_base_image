@@ -5,17 +5,29 @@ MAINTAINER Patrik Hagedorn <p.hagedorn@visono.com>
 
 USER root
 
-# Set the locale
-RUN locale-gen en_US.UTF-8
+# Get noninteractive frontend for Debian to avoid some problems:
+#    debconf: unable to initialize frontend: Dialog
+ENV DEBIAN_FRONTEND noninteractive
 
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
+# Set terminal to xterm
 ENV TERM="xterm"
 
+# Install and configure default locale
+RUN apt-get update \
+&& apt-get install -y locales \
+&& dpkg-reconfigure locales \
+&& locale-gen C.UTF-8 \
+&& /usr/sbin/update-locale LANG=C.UTF-8 \
+&& echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen \
+&& locale-gen
+
+# Set default locale for environment
+ENV LC_ALL C.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
+
 # Install curl, wget, unzip, htop, procps, vim, screen, supervisor, at, whois, less, python-pip, uuid-runtime
-RUN apt-get update -q \
-&& apt-get install -y \
+RUN apt-get install -y \
     curl \
     wget \
     unzip \

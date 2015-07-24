@@ -5,6 +5,12 @@ MAINTAINER Patrik Hagedorn <p.hagedorn@visono.com>
 
 USER root
 
+# Set the locale
+RUN locale-gen en_US.UTF-8
+
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 ENV TERM="xterm"
 
 # Install curl, wget, unzip, htop, procps, vim, screen, supervisor, at, whois, less, python-pip, uuid-runtime

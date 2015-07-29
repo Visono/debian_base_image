@@ -26,7 +26,7 @@ ENV LC_ALL C.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
-# Install curl, wget, unzip, htop, procps, vim, screen, supervisor, at, whois, less, python-pip, uuid-runtime
+# Install curl, wget, unzip, htop, procps, vim, screen, supervisor, at, whois, less, python-pip, uuid-runtime, gawk
 RUN apt-get install -y \
     curl \
     wget \
@@ -41,6 +41,7 @@ RUN apt-get install -y \
     less \
     python-pip \
     uuid-runtime \
+    gawk \
 && chmod 777 /var/run/screen \
 && mkdir -p /var/log/supervisor \
 && apt-get autoclean -y \

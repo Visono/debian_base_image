@@ -42,6 +42,7 @@ RUN apt-get install -y \
     python-pip \
     uuid-runtime \
     gawk \
+    mediainfo \
     && chmod 777 /var/run/screen \
     && mkdir -p /var/log/supervisor \
     && apt-get autoclean -y \

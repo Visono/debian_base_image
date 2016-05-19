@@ -1,5 +1,5 @@
-# Lastest debian:wheezy
-FROM debian:wheezy
+# Lastest debian:wheezy-backports
+FROM debian:wheezy-backports
 
 MAINTAINER Patrik Hagedorn <p.hagedorn@visono.com>
 

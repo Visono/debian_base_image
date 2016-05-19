@@ -43,6 +43,7 @@ RUN apt-get install -y \
     uuid-runtime \
     gawk \
     mediainfo \
+    jq \
     && chmod 777 /var/run/screen \
     && mkdir -p /var/log/supervisor \
     && apt-get autoclean -y \
